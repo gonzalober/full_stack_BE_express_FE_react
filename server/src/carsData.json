@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "make": "chevrolet",
+    "model": "chevelle malibu",
+    "color": "green",
+    "year": "1967",
+    "Origin": "USA"
+  },
+  {
+    "id": "2",
+    "make": "plymouth",
+    "model": "satellite",
+    "color": "blue",
+    "year": "1982",
+    "Origin": "USA"
+  },
+  {
+    "id": "3",
+    "make": "ford",
+    "model": "mustang",
+    "color": "yelow",
+    "year": "1980",
+    "Origin": "USA"
+  },
+  {
+    "id": "4",
+    "make": "chevrolet",
+    "model": "impala",
+    "color": "pink",
+    "year": "1975",
+    "Origin": "USA"
+  },
+  {
+    "id": "5",
+    "make": "pontiac",
+    "model": "catalina",
+    "color": "red",
+    "year": "1970",
+    "Origin": "USA"
+  },
+  {
+    "id": "6",
+    "make": "dodge ",
+    "model": "challenger",
+    "color": "purple",
+    "year": "1978",
+    "Origin": "Europe"
+  }
+]
