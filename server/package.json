@@ -7,10 +7,11 @@
   "private": true,
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^8.7.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.13"
   },
   "scripts": {
     "start": "nodemon src"
