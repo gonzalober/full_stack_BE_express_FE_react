@@ -37,7 +37,7 @@
     "model": "catalina",
     "color": "red",
     "year": "1970",
-    "Origin": "USA"
+    "origin": "USA"
   },
   {
     "id": "6",
@@ -45,6 +45,6 @@
     "model": "challenger",
     "color": "purple",
     "year": "1978",
-    "Origin": "Europe"
+    "origin": "Europe"
   }
 ]

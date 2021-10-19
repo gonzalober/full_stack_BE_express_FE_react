@@ -36,6 +36,7 @@ const Home = () => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
+
       body: JSON.stringify(add()),
     })
       .then((res) => res.json())
@@ -50,13 +51,14 @@ const Home = () => {
       color: arrayInput[2],
       year: arrayInput[3],
     };
+    loadingData.push(resultObj);
+    setLoadingData([...loadingData]);
     return resultObj;
   };
 
-  const handleClick = (e) => {
-    console.log(e.target.id);
+  const handleClick = async (e) => {
     const saved = e;
-    fetch(
+    await fetch(
       `http://localhost:4000/api/cars/${e.target.id}`,
       {
         method: "DELETE",
@@ -68,11 +70,15 @@ const Home = () => {
         setLoadingData(loadingData.filter((car) => car.id === saved.target.id))
       )
       .catch((err) => console.log(err));
+    let newArray = loadingData.filter((car) => car.id !== saved.target.id);
+    setLoadingData([...newArray]);
   };
 
   useEffect(() => {
     defineData();
-  }, [loadingData]);
+  }, []);
+
+  console.log(loadingData);
 
   return (
     <div className="main">
@@ -86,7 +92,7 @@ const Home = () => {
               ? loadingData.map((obj, index) => {
                   return (
                     <div className="card" key={index}>
-                      {obj.make} {obj.model} {obj.color} {obj.year}
+                      {obj.make} {obj.model} {obj.color} {obj.year} {obj.origin}
                       <button
                         className="button"
                         id={obj.id}
