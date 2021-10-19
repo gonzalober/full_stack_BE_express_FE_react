@@ -1,19 +1,12 @@
 const { Client } = require("pg");
 
 const client = new Client({
+  user: "gonzalo.berhouetecs.co.uk",
   host: "localhost",
-  user: "postgres",
+  database: "training_server_js",
   port: 5432,
-  password: "rootUser",
-  database: "postgres",
 });
 
 client.connect();
 
-client.query("Select * from users", (err, res) => {
-  if (!err) {
-    console.log(res.row);
-  } else {
-    console.log(err.message);
-  }
-});
+module.exports = client;

@@ -1,15 +1,20 @@
 const express = require("express");
-var cors = require("cors");
 const app = express();
+const carsRoutes = require("./routes/cars");
 
-app.set("port", process.env.PORT || 4000);
+const port = 4000;
 
-app.use(cors());
-app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.use("/api/cars", require("./routes/cars"));
+app.get("/", (req, res) => res.send("HELLO WORLD"));
 
-app.listen(app.get("port"), () =>
-  console.log(`Server on port ${app.get("port")}`)
-);
+app.use("/api/cars", carsRoutes);
+
+app.listen(port, () => console.log(`Server on port ${port}`));
+
+//var cors = require("cors");
+
+// app.set("port", process.env.PORT || 4000);
+// app.use(cors());
+// app.use(express.urlencoded({ extended: false }));
+// app.use(express.json());
