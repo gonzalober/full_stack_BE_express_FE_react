@@ -57,28 +57,23 @@ const Home = () => {
   };
 
   const handleClick = async (e) => {
-    const saved = e;
-    await fetch(
-      `http://localhost:4000/api/cars/${e.target.id}`,
-      {
-        method: "DELETE",
-      },
-      e.persist()
-    )
+    const saved = e.target.id;
+    console.log(e.target.id);
+    await fetch(`http://localhost:4000/api/cars/${e.target.id}`, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
-      .then(() =>
-        setLoadingData(loadingData.filter((car) => car.id === saved.target.id))
-      )
+      .then((res) => {
+        console.log(res);
+      })
       .catch((err) => console.log(err));
-    let newArray = loadingData.filter((car) => car.id !== saved.target.id);
-    setLoadingData([...newArray]);
+    let resulArr = loadingData.filter((car) => +car.id !== +saved);
+    setLoadingData(resulArr);
   };
 
   useEffect(() => {
     defineData();
   }, []);
-
-  console.log(loadingData);
 
   return (
     <div className="main">

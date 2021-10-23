@@ -36,6 +36,7 @@ const addCars = (req, res) => {
 
 const removeCar = (req, res) => {
   const id = parseInt(req.params.id);
+  console.log(id);
   client.query(queries.getCarsById, [id], (error, results) => {
     const noCarFound = !results.rows.length;
     if (noCarFound) {
